@@ -1,7 +1,18 @@
-class Band(): 
+class Band():
+  instances = []
+
   def __init__(self, name, arr):
     self.name = name
     self.members = arr
+    Band.instances.append(self)
+
+  def play_solos(self):
+    return ["face melting guitar solo", "bom bom buh bom", "rattle boom crash"]
+
+  @classmethod
+  def to_list(cls):
+    # list_Arr = []
+    return cls.instances
 
 class Musician():
   def __init__(self, instrument, name):
